@@ -61,25 +61,70 @@
         function showAdAndHoroscope() {
             show_8538406()
                 .then(() => {
-                    alert('You have seen the ad!');
                     showHoroscope();
                 })
                 .catch(() => {
                     alert('Ad could not be loaded. Try again later.');
                 });
         }
-
-        // Mock ad function (Replace with actual implementation)
-        function show_8538406() {
-            return new Promise((resolve, reject) => {
-                // Simulate ad loading and watching
-                setTimeout(() => {
-                    // Simulate success 80% of the time
-                    Math.random() > 0.2 ? resolve() : reject();
-                }, 2000); // Simulate a 2-second ad
-            });
-        }
+        
     </script>
-    (Final)
+
+
+
+
+
+ <!-- Ad Script -->
+      <!-- Section to display the loaded zone ID -->
+    <section id="zone-info">
+        <p id="zone-message"></p>
+    </section>
+    
+    <script>
+        // Define an array of data-zone IDs
+ const zoneIds = [
+            '115035',
+            '115034',
+            '115033',
+            '115032',
+            '115031',
+            '115030',
+            '115029',
+            '115028',
+            '115027',
+            '115026',
+            '115025',
+            '115024',
+            '115094',
+            '115093',            
+            '115095',
+            '115096',
+            '115097',
+            '115098',
+            '115099',
+            '115100'     
+        ];
+        
+        // Randomly select a zone ID from the array
+        const randomZoneId = zoneIds[Math.floor(Math.random() * zoneIds.length)];
+
+        // Log the selected zone ID to the console
+        console.log("Loaded ad zone: " + randomZoneId);
+
+        // Optionally, display the selected zone on the page
+        const zoneMessage = document.getElementById('zone-message');
+        zoneMessage.textContent = "The selected ad zone is: " + randomZoneId;
+
+        // Create the ad script element dynamically
+        const adScript = document.createElement('script');
+        adScript.src = 'https://alwingulla.com/88/tag.min.js';
+        adScript.setAttribute('data-zone', randomZoneId);
+        adScript.setAttribute('async', 'true');
+        adScript.setAttribute('data-cfasync', 'false');
+
+        // Append the script to the body
+        document.body.appendChild(adScript);
+    </script>
+    (OM)
 </body>
 </html>
