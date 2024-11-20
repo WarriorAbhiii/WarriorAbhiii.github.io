@@ -28,10 +28,11 @@
             background-color: #0056b3;
         }
     </style>
+    <script src='//niphaumeenses.net/vignette.min.js' data-zone='8538406' data-sdk='show_8538406'></script>
 </head>
 <body>
     <h1>Find Out Your Horoscope</h1>
-    <button onclick="showHoroscope()">Get My Horoscope</button>
+    <button onclick="showAdAndHoroscope()">Get My Horoscope</button>
     <p class="horoscope" id="horoscope"></p>
 
     <script>
@@ -55,6 +56,30 @@
             const horoscope = randomHoroscopes[randomIndex];
             document.getElementById('horoscope').textContent = horoscope;
         }
+
+        // Function to show ad and then horoscope
+        function showAdAndHoroscope() {
+            show_8538406()
+                .then(() => {
+                    alert('You have seen the ad!');
+                    showHoroscope();
+                })
+                .catch(() => {
+                    alert('Ad could not be loaded. Try again later.');
+                });
+        }
+
+        // Mock ad function (Replace with actual implementation)
+        function show_8538406() {
+            return new Promise((resolve, reject) => {
+                // Simulate ad loading and watching
+                setTimeout(() => {
+                    // Simulate success 80% of the time
+                    Math.random() > 0.2 ? resolve() : reject();
+                }, 2000); // Simulate a 2-second ad
+            });
+        }
     </script>
+    (Final)
 </body>
 </html>
