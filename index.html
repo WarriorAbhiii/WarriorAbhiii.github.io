@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horoscope Teller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .horoscope {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Out Your Horoscope</h1>
+    <button onclick="showHoroscope()">Get My Horoscope</button>
+    <p class="horoscope" id="horoscope"></p>
 
+    <script>
+        // Array of random horoscopes
+        const randomHoroscopes = [
+            "Today is a great day to start something new!",
+            "Luck is on your side. Take a chance!",
+            "You might face challenges, but they will make you stronger.",
+            "Love and joy will find you when you least expect it.",
+            "Focus on your goals and success will follow.",
+            "Stay positive; great things are coming your way.",
+            "An exciting opportunity will come your way soon.",
+            "Take a break today and enjoy some 'me time'.",
+            "Your creativity will shine bright today.",
+            "Someone special will surprise you today."
+        ];
+
+        // Function to show a random horoscope
+        function showHoroscope() {
+            const randomIndex = Math.floor(Math.random() * randomHoroscopes.length);
+            const horoscope = randomHoroscopes[randomIndex];
+            document.getElementById('horoscope').textContent = horoscope;
+        }
+    </script>
+</body>
+</html>
